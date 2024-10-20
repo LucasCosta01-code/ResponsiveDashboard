@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Administração</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <script>
+        // Verifica se o usuário está logado e é administrador
+        if (!localStorage.getItem('loggedIn') || localStorage.getItem('username') !== 'admin') {
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Painel de Administração</h1>
+        <nav>
+            <a href="index.html">Página Principal</a>
+            <a href="login.html" id="logout">sair</a>
+        </nav>
+    </header>
+    <main>
+
+        
+        <div id="user-list-container">
+            <h2>Lista de Usuários Registrados</h2>
+            <ul id="user-list"></ul>
+        </div>
+
+        <div>
+            <form id="edit-user-form">
+                <input type="text" id="old-username" placeholder="Nome de usuário antigo" required>
+                <input type="text" id="new-username" placeholder="Novo nome de usuário" required>
+                <input type="password" id="new-password" placeholder="Nova senha" required>
+                <button type="submit">Editar Usuário</button>
+            </form>
+            
+            <form id="remove-user-form">
+                <input type="text" id="remove-username" placeholder="Nome de usuário" required>
+                <button type="submit">Remover Usuário</button>
+            </form>
+        </div>
+    </main>
+
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

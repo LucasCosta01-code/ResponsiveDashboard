@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiragem de Cartas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <script>
+        // Verifica se o usuário está logado
+        if (!localStorage.getItem('loggedIn')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Login </h1>
+        <nav>
+            <span id="user-name"></span>
+            <a href="admin.html" id="admin-link" class="hidden">Painel de Administração</a>
+            <a href="login.html" id="logout">sair</a>
+        </nav>
+        
+    </header>
+    
+    <main>
+        
+        <section id="card-container">
+            <button id="draw-card">Ver mais</button>
+            <div id="card-result" aria-live="polite"></div>
+        </section>
+    
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
